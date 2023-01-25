@@ -46,7 +46,8 @@ spec:
               path: /
               port: http
           env:
-            - ALLOW_EMPTY_PASSWORD: yes
+            - name: ALLOW_EMPTY_PASSWORD
+              value: "yes"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
